@@ -1,0 +1,74 @@
+<resources>
+    <string name="app_name">FreeDatingCLG</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <!--
+        Fragmento a. Login
+    -->
+    <string name="menu_login">Iniciar sesión</string>
+    <string name="hintEmailEditText">Email</string>
+    <string name="hintPasswordEditText">Password</string>
+    <string name="bResetPass">Reset contraseña</string>
+    <string name="bLogin">Identifícate</string>
+    <string name="bRegister">Nuevo usuario</string>
+
+    <!--
+        Fragmento b. Mi perfil
+    -->
+    <string name="menu_miperfil">Mi perfil</string>
+    <string name="bActualziar">Actualizar</string>
+    <string name="hintNombre">Nombre</string>
+    <string name="hintEdad">Edad</string>
+    <string name="hintEstatura">Estatura</string>
+    <string name="hintPeso">Peso</string>
+    <string name="hintLolizacion">Localizacion</string>
+    <string name="hintFormacion">Formacion</string>
+    <string name="hintIngresos">Ingresos</string>
+    <string name="hintdsTabaco">Fumas?</string>
+    <string name="hintdsAlcohol">Bebes?</string>
+    <string name="hintdsAlucinogenos">Alucinógenos?</string>
+    <string name="hintReligion">Tu religión</string>
+    <string name="hintVacunado">Vacunado covid-19</string>
+    <string name="hintBio">Breve descripción</string>
+
+    <!--
+        Fragmento c. Sugerencias
+    -->
+    <string name="menu_sugerencias">Parejas sugeridas</string>
+
+    <!--
+        Fragmento d. Me gusta
+    -->
+    <string name="menu_megusta">Me gusta</string>
+
+    <!--
+        Fragmento e. Visitados
+    -->
+    <string name="menu_visitados">Visitas a mi perfil</string>
+
+    <!--
+        Fragmento f. Mensajes
+    -->
+    <string name="menu_mensajes">Mensajes</string>
+
+    <!--
+        Fragmento g. Ajustes
+    -->
+    <string name="menu_ajustes">Ajustes</string>
+    <string name="bLogout">Cerrar sesión</string>
+
+    <!--
+
+    -->
+    <string name="menu_home">Home</string>
+
+    <!--
+
+    -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <!-- a. Login
+    Home, no accesible -->
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.freedatingclg.ui.aHome.LoginFragment"
+        android:label="@string/menu_login"
+        tools:layout="@layout/fragment_home" />
+
+    <!-- -->
+    <fragment
+        android:id="@+id/nav_gallery"
+        android:name="com.example.freedatingclg.ui.bMiperfil.MiPerfilFragment"
+        android:label="@string/menu_miperfil"
+        tools:layout="@layout/fragment_miperfil" />
+
+    <!-- -->
+    <fragment
+        android:id="@+id/nav_slideshow"
+        android:name="com.example.freedatingclg.ui.cSugerencias.SugeridasFragment"
+        android:label="@string/menu_sugerencias"
+        tools:layout="@layout/fragment_sugerencias" />
+
+    <!-- -->
+    <fragment
+        android:id="@+id/nav_megusta"
+        android:name="com.example.freedatingclg.ui.dMegusta.MegustaFragment"
+        android:label="@string/menu_megusta"
+        tools:layout="@layout/fragment_megusta" />
+
+    <!-- -->
+    <fragment
+        android:id="@+id/nav_visitados"
+        android:name="com.example.freedatingclg.ui.eVisitados.VisitadosFragment"
+        android:label="@string/menu_visitados"
+        tools:layout="@layout/fragment_visitados" />
+
+    <!-- -->
+    <fragment
+        android:id="@+id/nav_mensajes"
+        android:name="com.example.freedatingclg.ui.fMensajes.MensajesFragment"
+        android:label="@string/menu_mensajes"
+        tools:layout="@layout/fragment_mensajes" />
+
+    <!-- -->
+    <fragment
+        android:id="@+id/nav_ajustes"
+        android:name="com.example.freedatingclg.ui.gAjustes.AjustesFragment"
+        android:label="@string/menu_ajustes"
+        tools:layout="@layout/fragment_ajustes" />
+
+</navigation>
