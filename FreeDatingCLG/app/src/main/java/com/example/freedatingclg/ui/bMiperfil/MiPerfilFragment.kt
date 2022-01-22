@@ -46,6 +46,8 @@ class MiPerfilFragment : Fragment() {
         // Firebase auth, db y storage
         auth = FirebaseAuth.getInstance()
         val uid = auth.currentUser?.uid
+        val correo = auth.currentUser?.email
+
         databaseReference = FirebaseDatabase.getInstance().getReference("Usuarios")
 
         binding.bActualizar.setOnClickListener {
@@ -67,28 +69,26 @@ class MiPerfilFragment : Fragment() {
             val bio: String = binding.etBio.text.toString()
 
             val user = User(correo,nombreCompleto,edad,estatura,peso,localizacion,"formacion","ingresos","dsTabaco","dsAlcohol","dsAlucinogenos","religion","vacunadoCovid",bio)
-            println("0. Usuario creado ")
+            //println("0. Usuario creado ")
 
             if (uid != null){
-                println("1. El user no es null")
-                databaseReference.child(uid).setValue(user).addOnCompleteListener{
-                    println("2. Ha conseguido escribir")
+                //println("1. El user no es null")
+                databaseReference.child(correo).setValue(user).addOnCompleteListener{
+                    //println("2. Ha conseguido escribir")
                     if (it.isSuccessful){
-                        uploadFoto()
+                        uploadFoto(correo)
                     }else{
                         Toast.makeText(activity,"Failed to update profile",Toast.LENGTH_SHORT).show()
                     }
                 }
-
-
+            }else{
+                Toast.makeText(activity,"No hay usuario logado",Toast.LENGTH_SHORT).show()
             }
-
         }
 
         // Usuario logado
-        val user: String? = FirebaseAuth.getInstance().currentUser?.displayName
-        if(!user.isNullOrEmpty()){
-            binding.tvCorreo.text = user
+        if(!correo.isNullOrEmpty()){
+            binding.tvCorreo.text = correo
         }else{
             binding.tvCorreo.text = "Usuario desconocido"
         }
@@ -96,15 +96,15 @@ class MiPerfilFragment : Fragment() {
         return root
     }
 
-    private fun uploadFoto() {
+    private fun uploadFoto(correo: String) {
         //imageUri = Uri.parse("android.resource://$packagename/${R.drawable.foto2.PNG}")
         imageUri = Uri.parse("android.resource://com.example.freedatingclg/${R.drawable.foto2}")
-        storageReference = FirebaseStorage.getInstance().getReference("Usuarios/"+auth.currentUser?.uid)
+        storageReference = FirebaseStorage.getInstance().getReference("Usuarios/"+correo)
         storageReference.putFile(imageUri).addOnSuccessListener {
-            println("3. Ha subido bien la foto")
-            Toast.makeText(activity,"Subida correctamente",Toast.LENGTH_SHORT).show()
+            //println("3. Ha subido bien la foto")
+            Toast.makeText(activity,"Perfil actualizado y foto subida correctamente",Toast.LENGTH_SHORT).show()
         }.addOnFailureListener{
-            println("4. No ha subido bien la foto")
+            //println("4. No ha subido bien la foto")
             Toast.makeText(activity,"No se ha podido subir la foto",Toast.LENGTH_SHORT).show()
         }
     }

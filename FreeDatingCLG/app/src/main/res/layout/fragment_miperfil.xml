@@ -6,24 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".ui.bMiperfil.MiPerfilFragment">
 
-    <!--
-    <ImageView
-        android:id="@+id/imFoto"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:src="@drawable/foto2" /> -->
-
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imFoto"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginTop="60dp"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="2dp"
         android:src="@drawable/foto2"
         app:civ_border_color="#FF000000"
         app:layout_constraintEnd_toEndOf="parent"
@@ -31,204 +18,171 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
+    <TextView
+        android:id="@+id/tvCorreo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_marginBottom="2dp"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineVert2"
+        app:layout_constraintStart_toEndOf="@+id/guidelineVert1"
+        app:layout_constraintTop_toBottomOf="@+id/guideline0" />
+
+    <EditText
+        android:id="@+id/etNombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="@string/hintNombre"
+        android:layout_marginBottom="2dp"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineVert3"
+        app:layout_constraintStart_toEndOf="@+id/guidelineVert0"
+        app:layout_constraintTop_toBottomOf="@+id/tvCorreo" />
+
+    <EditText
+        android:id="@+id/etLocalizacion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:layout_weight="1"
+        android:ems="10"
+        android:hint="@string/hintLolizacion"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/etEdad"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineVert3"
+        app:layout_constraintStart_toEndOf="@+id/guidelineVert0"
+        app:layout_constraintTop_toBottomOf="@+id/etNombre" />
+
+    <EditText
+        android:id="@+id/etEdad"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="6"
+        android:hint="@string/hintEdad"
+        android:inputType="number"
+        android:layout_marginBottom="2dp"
+        app:layout_constraintBottom_toTopOf="@+id/etBio"
+        app:layout_constraintEnd_toStartOf="@+id/etEstatura"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/etEstatura"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"
+        android:layout_weight="1"
+        android:ems="6"
+        android:hint="@string/hintEstatura"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/etBio"
+        app:layout_constraintEnd_toStartOf="@+id/etPeso"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/etEdad" />
+
+    <EditText
+        android:id="@+id/etPeso"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"
+        android:layout_weight="1"
+        android:ems="6"
+        android:hint="@string/hintPeso"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/etBio"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imFoto">
-
-        <TextView
-            android:id="@+id/tvCorreo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:layout_weight="1"
-            android:text="TextView"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textStyle="bold" />
-
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="8dp"
-            android:layout_weight="1" />
-
-        <EditText
-            android:id="@+id/etNombre"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:gravity="center"
-            android:hint="@string/hintNombre"
-            android:inputType="textPersonName"
-            android:textAlignment="center" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="8dp"
-            android:layout_weight="1" />
-
-        <EditText
-            android:id="@+id/etLocalizacion"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:hint="@string/hintLolizacion"
-            android:inputType="textPersonName" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="8dp"
-            android:layout_weight="1" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-
-            <EditText
-                android:id="@+id/etEdad"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="6"
-                android:hint="@string/hintEdad"
-                android:inputType="number" />
-
-            <Space
-                android:layout_width="8dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-
-            <EditText
-                android:id="@+id/etEstatura"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="6"
-                android:hint="@string/hintEstatura"
-                android:inputType="number" />
-
-            <Space
-                android:layout_width="8dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-
-            <EditText
-                android:id="@+id/etPeso"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="6"
-                android:hint="@string/hintPeso"
-                android:inputType="number" />
-
-        </LinearLayout>
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/etEstatura" />
 <!--
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_weight="1" />
+    <EditText
+        android:id="@+id/etFormacion"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"
+        android:layout_weight="1"
+        android:hint="@string/hintFormacion"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/etDsTabaco"
+        app:layout_constraintEnd_toStartOf="@+id/etIngresos"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="horizontal">
+    <EditText
+        android:id="@+id/etIngresos"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"
+        android:layout_weight="1"
+        android:hint="@string/hintIngresos"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/etDsTabaco"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/etFormacion" />
 
-            <EditText
-                android:id="@+id/etFormacion"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="10"
-                android:hint="@string/hintFormacion"
-                android:inputType="textPersonName" />
+    <EditText
+        android:id="@+id/etDsTabaco"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"
+        android:layout_weight="1"
+        android:hint="@string/hintdsTabaco"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/etBio"
+        app:layout_constraintEnd_toStartOf="@+id/etDsAlcohol"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/guidelineVert0"
+        app:layout_constraintStart_toStartOf="parent" />
 
-            <Space
-                android:layout_width="wrap_content"
-                android:layout_height="8dp"
-                android:layout_weight="1" />
 
-            <EditText
-                android:id="@+id/etIngresos"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="10"
-                android:hint="@string/hintIngresos"
-                android:inputType="textPersonName" />
-        </LinearLayout>
+    <EditText
+        android:id="@+id/etDsAlcohol"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"
+        android:layout_weight="1"
+        android:hint="@string/hintdsAlcohol"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/etBio"
+        app:layout_constraintEnd_toStartOf="@+id/etDsAlucinogenos"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/etDsTabaco" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-
-            <EditText
-                android:id="@+id/etDsTabaco"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="10"
-                android:hint="@string/hintdsTabaco"
-                android:inputType="textPersonName" />
-
-            <Space
-                android:layout_width="wrap_content"
-                android:layout_height="8dp"
-                android:layout_weight="1" />
-
-            <EditText
-                android:id="@+id/etDsAlcohol"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="10"
-                android:hint="@string/hintdsAlcohol"
-                android:inputType="textPersonName" />
-
-            <Space
-                android:layout_width="wrap_content"
-                android:layout_height="8dp"
-                android:layout_weight="1" />
-
-            <EditText
-                android:id="@+id/etDsAlucinogenos"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="10"
-                android:hint="@string/hintdsAlucinogenos"
-                android:inputType="textPersonName" />
-        </LinearLayout>
+    <EditText
+        android:id="@+id/etDsAlucinogenos"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"
+        android:layout_weight="1"
+        android:hint="@string/hintdsAlucinogenos"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/etBio"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/etDsAlcohol" />
 -->
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="8dp"
-            android:layout_weight="1" />
-
-        <EditText
-            android:id="@+id/etBio"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:hint="@string/hintBio"
-            android:inputType="textPersonName" />
-    </LinearLayout>
+    <EditText
+        android:id="@+id/etBio"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginTop="4dp"
+        android:layout_weight="1"
+        android:ems="10"
+        android:hint="@string/hintBio"
+        android:inputType="textPersonName"
+        android:maxLength="255"
+        app:layout_constraintBottom_toTopOf="@+id/bActualizar"
+        app:layout_constraintEnd_toEndOf="@+id/guidelineVert3"
+        app:layout_constraintStart_toStartOf="@+id/guidelineVert0" />
 
     <Button
         android:id="@+id/bActualizar"
@@ -239,9 +193,66 @@
         android:layout_marginBottom="10dp"
         android:text="@string/bActualziar"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        />
+        app:layout_constraintEnd_toEndOf="@+id/guidelineVert3"
+        app:layout_constraintStart_toStartOf="@+id/guidelineVert0"
+        app:layout_constraintTop_toBottomOf="@+id/guideline2" />
 
+
+    <!-- HELPERS -->
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.3" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.6" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.9" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineVert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineVert0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineVert1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.35" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineVert2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.65" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineVert3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95" />
 </androidx.constraintlayout.widget.ConstraintLayout>

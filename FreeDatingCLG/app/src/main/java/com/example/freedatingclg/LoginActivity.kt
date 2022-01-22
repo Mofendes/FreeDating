@@ -10,8 +10,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 
 import com.google.firebase.database.FirebaseDatabase
-
-
+import kotlin.system.exitProcess
 
 
 class LoginActivity : AppCompatActivity() {
@@ -121,5 +120,11 @@ class LoginActivity : AppCompatActivity() {
             //putExtra("provider", provider.name)
         }
         startActivity(homeIntent)
+    }
+
+    // Para que no haga backpressed a la SplashScreen Activity
+    override fun onBackPressed() {
+        moveTaskToBack(true);
+        exitProcess(-1)
     }
 }
