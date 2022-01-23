@@ -47,4 +47,6 @@ data class User (
     //val vacunadoCovid: Boolean,
     //val bio: String
 
-    )
+    ){
+        constructor() : this("","","","","","","","","","","","","", "")
+    }
