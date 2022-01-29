@@ -6,10 +6,12 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.example.freedatingclg.databinding.ActivityLoginBinding
+import com.example.freedatingclg.ui.bMiperfil.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 
 import com.google.firebase.database.FirebaseDatabase
+import java.util.Objects.toString
 import kotlin.system.exitProcess
 
 
@@ -40,17 +42,13 @@ class LoginActivity : AppCompatActivity() {
                         if (it.isSuccessful){
                             nextScreen(binding.emailTextView.text.toString()) // Le paso el email del usuario cómo extra en el intent para arrancar nueva actividad
                         }else{
-                            showAlertErrorLogin()
+                            Toast.makeText(applicationContext, it.exception?.message,Toast.LENGTH_LONG).show()
+                            //showAlertErrorLogin()
                         }
                     }
             }
 
         }
-
-
-
-
-
 
         // Usuario nuevo
         binding.bRegister.setOnClickListener {
@@ -67,7 +65,8 @@ class LoginActivity : AppCompatActivity() {
 
                                 nextScreen(correo) // Le paso el email del usuario cómo extra en el intent para arrancar nueva actividad
                             }else{
-                                showAlertErrorRegister()
+                                //showAlertErrorRegister()
+                                Toast.makeText(applicationContext, it.exception?.message,Toast.LENGTH_LONG).show()
                             }
                         }
             }
@@ -80,10 +79,27 @@ class LoginActivity : AppCompatActivity() {
         val database = FirebaseDatabase.getInstance()
         val myRef = database.getReference("Usuarios")
 
-        myRef.setValue("Hello, World! putamierda. El usuario es $correo")
+        val user = User()
+        user.correo = correo.replace('.','*',false) //  correo.replace('.','*',false)
+
+        // DEBUG
+        println(user.toString())
+
+        myRef.child(user.correo).setValue(user).addOnCompleteListener{
+            //println("2. Ha conseguido escribir")
+            if (it.isSuccessful){
+                //uploadFoto(correoo)
+                Toast.makeText(applicationContext,"Successfully created new user",Toast.LENGTH_SHORT).show()
+            }else{
+                Toast.makeText(applicationContext,"Failed to INSERT new user",Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        //myRef.setValue("Hello, World! putamierda. El usuario es $correo")
 
     }
 
+    /**
     private fun showAlertErrorRegister() {
         val builder = AlertDialog.Builder(this)
         builder.setTitle("ERROR!")
@@ -101,6 +117,9 @@ class LoginActivity : AppCompatActivity() {
         val dialog: AlertDialog = builder.create()
         dialog.show()
     }
+
+    */
+
 
     private fun showAlertReset() {
         val builder = AlertDialog.Builder(this)

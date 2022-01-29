@@ -24,9 +24,13 @@
     <string name="bActualziar">Actualizar</string>
     <string name="hintNombre">Nombre</string>
     <string name="hintEdad">Edad</string>
+    <string name="tvEdad">Edad</string>
+    <string name="tvEstatura">Estatura</string>
     <string name="hintEstatura">Estatura</string>
     <string name="hintPeso">Peso</string>
+    <string name="tvPeso">Peso</string>
     <string name="hintLolizacion">Localizacion</string>
+    <string name="tvLocalizacion">Localizacion</string>
     <string name="hintFormacion">Formacion</string>
     <string name="hintIngresos">Ingresos</string>
     <string name="hintdsTabaco">Fumas?</string>
@@ -35,6 +39,7 @@
     <string name="hintReligion">Tu religión</string>
     <string name="hintVacunado">Vacunado covid-19</string>
     <string name="hintBio">Breve descripción</string>
+    <string name="tvBio">Breve descripción</string>
 
     <!--
         Fragmento c. Sugerencias
@@ -55,6 +60,16 @@
         Fragmento f. Mensajes
     -->
     <string name="menu_mensajes">Mensajes</string>
+    <string name="hintNewChat">Correo electronico...</string>
+    <string name="btNewChat">Nuevo chat</string>
+
+    <!--
+    Fragmento f. Mensajes. ChatFragment
+    -->
+    <string name="btAtras">Atrás</string>
+    <string name="btEnviar">Enviar</string>
+    <string name="hintMessage">Mensaje...</string>
+
 
     <!--
         Fragmento g. Ajustes

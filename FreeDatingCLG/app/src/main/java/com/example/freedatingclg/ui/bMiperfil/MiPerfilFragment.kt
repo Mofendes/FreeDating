@@ -68,11 +68,11 @@ class MiPerfilFragment : Fragment() {
 
             //Instanciamos un nuevo usuario
             //val correo: String = ""
-            val nombreCompleto: String = binding.etNombre.text.toString()
-            val edad: String = binding.etEdad.text.toString()
-            val estatura: String = binding.etEstatura.text.toString()
-            val peso: String = binding.etPeso.text.toString()
-            val localizacion: String = binding.etLocalizacion.text.toString()
+            var nombreCompleto: String = binding.etNombre.text.toString()
+            var edad: String = binding.etEdad.text.toString()
+            var estatura: String = binding.etEstatura.text.toString()
+            var peso: String = binding.etPeso.text.toString()
+            var localizacion: String = binding.etLocalizacion.text.toString()
             //val formacion: String = binding.etFormacion.text.toString()
             //val ingresos: String = binding.etIngresos.text.toString()
             //val dsTabaco: String = binding.etDsTabaco.text.toString()
@@ -82,6 +82,14 @@ class MiPerfilFragment : Fragment() {
             //val vacunadoCovid: String = ""
             val bio: String = binding.etBio.text.toString()
 
+            if(binding.etNombre.text.toString().isNullOrEmpty()){
+                // Si he descargado la información, la estoy poniendo en el hint, el text es "", entonces, inicializo las variables con el hint
+                nombreCompleto= binding.etNombre.hint.toString()
+                edad= binding.etEdad.hint.toString()
+                estatura= binding.etEstatura.hint.toString()
+                peso = binding.etPeso.hint.toString()
+                localizacion= binding.etLocalizacion.hint.toString()
+            }
 
             user = User(correoo,nombreCompleto,edad,estatura,peso,localizacion,"formacion","ingresos","dsTabaco","dsAlcohol","dsAlucinogenos","religion","vacunadoCovid",bio)
             //println("0. Usuario creado ")
@@ -127,7 +135,11 @@ class MiPerfilFragment : Fragment() {
 
                 // Actualizamos con el nuevo user la UI
                 //binding.imFoto
-                binding.tvCorreo.text = user.correo.replace('*','.',false) //  correo.replace('.','*',false)
+                if(binding.tvCorreo.text.isNullOrEmpty()){
+                    binding.tvCorreo.hint = user.correo.replace('*','.',false) //  correo.replace('.','*',false)
+                }else{
+                    binding.tvCorreo.text = user.correo.replace('*','.',false) //  correo.replace('.','*',false)
+                }
                 binding.etNombre.hint = user.nombreCompleto
                 binding.etLocalizacion.hint = user.localizacion
                 binding.etEdad.hint = user.edad
