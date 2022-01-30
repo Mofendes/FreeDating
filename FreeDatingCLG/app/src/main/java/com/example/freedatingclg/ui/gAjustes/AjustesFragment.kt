@@ -41,6 +41,7 @@ class AjustesFragment : Fragment() {
         binding.bLogout.setOnClickListener {
             //Toast.makeText(activity,"Funciona?",Toast.LENGTH_SHORT).show()
             FirebaseAuth.getInstance().signOut()
+
         }
 
         return root

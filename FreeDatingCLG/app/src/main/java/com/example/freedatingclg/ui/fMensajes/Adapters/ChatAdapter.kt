@@ -24,7 +24,6 @@ class ChatAdapter(val chatClick: (Chat) -> Unit): RecyclerView.Adapter<ChatAdapt
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ChatViewHolder { // Revisar en fragments
         // Devuelve la vista
-
         val v = LayoutInflater.from(parent.context).inflate(R.layout.item_chat, parent, false)
         return ChatViewHolder(v)
     }

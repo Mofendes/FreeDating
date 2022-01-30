@@ -6,4 +6,6 @@ data class Message(
     var message: String = "",
     var from: String = "",
     var dob: Date = Date()
+
+//    constructor() : this("","",Date())
 )

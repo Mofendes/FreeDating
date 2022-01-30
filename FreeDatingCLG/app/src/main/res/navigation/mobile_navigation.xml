@@ -50,6 +50,20 @@
         <action
             android:id="@+id/action_nav_mensajes_to_chatFragment"
             app:destination="@id/nav_chat" />
+        <!--
+        <argument
+            android:name="id"
+            app:argType="string"
+            android:defaultValue="http://sohamerp.com/avo/avo_privacy_policy.html"/>
+        <argument
+            android:name="name"
+            app:argType="string"
+            android:defaultValue="http://sohamerp.com/avo/avo_privacy_policy.html"/>
+        <argument
+            android:name="users"
+            app:argType="string"
+            android:defaultValue="http://sohamerp.com/avo/avo_privacy_policy.html"/>
+        -->
     </fragment>
 
     <fragment
