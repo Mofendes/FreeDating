@@ -41,7 +41,7 @@
         android:label="@string/menu_visitados"
         tools:layout="@layout/fragment_visitados" />
 
-    <!-- -->
+    <!-- Mensajes && Chat  -->
     <fragment
         android:id="@+id/nav_mensajes"
         android:name="com.example.freedatingclg.ui.fMensajes.MensajesFragment"
@@ -52,6 +52,16 @@
             app:destination="@id/nav_chat" />
     </fragment>
 
+    <fragment
+        android:id="@+id/nav_chat"
+        android:name="com.example.freedatingclg.ui.fMensajes.ChatFragment"
+        android:label="fragment_chat"
+        tools:layout="@layout/fragment_chat" >
+        <action
+            android:id="@+id/action_nav_chat_to_nav_mensajes"
+            app:destination="@id/nav_mensajes" />
+    </fragment>
+
     <!-- -->
     <fragment
         android:id="@+id/nav_ajustes"
@@ -59,10 +69,6 @@
         android:label="@string/menu_ajustes"
         tools:layout="@layout/fragment_ajustes" />
 
-    <fragment
-        android:id="@+id/nav_chat"
-        android:name="com.example.freedatingclg.ui.fMensajes.ChatFragment"
-        android:label="fragment_chat"
-        tools:layout="@layout/fragment_chat" />
+
 
 </navigation>
